@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "MoodiMOS",
+	"description": {
+		"": "Torse MoodiMOS paramétrique : coque avec vitre 3,5\" affleurante, dos à colonnes de vis"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

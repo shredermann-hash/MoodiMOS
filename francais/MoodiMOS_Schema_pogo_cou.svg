@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" font-family="Helvetica, Arial, sans-serif">
+<rect width="1100" height="700" fill="#fbfaf7"/>
+<text x="30" y="46" font-size="30" font-weight="bold" fill="#1b2631">MoodiMOS</text>
+<text x="30" y="68" font-size="13" fill="#666">Câblage du pogo du cou</text>
+<text x="720" y="40" text-anchor="middle" font-size="19" font-weight="bold" fill="#1b2631">Pogo magnétique 5 contacts : torse ↔ tête</text>
+<text x="720" y="62" text-anchor="middle" font-size="13" fill="#666">Pas 2,5 mm · ressorts côté torse, pastilles côté tête · aimants intégrés aux deux bouts · fil souple 26-28 AWG</text>
+<rect x="20" y="90" width="300" height="470" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="170.0" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Torse (connecteur 2×16)</text>
+<rect x="400" y="90" width="300" height="470" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="550.0" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Pogo du cou</text>
+<rect x="780" y="90" width="300" height="470" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="930.0" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Tête (connecteur 12 broches)</text>
+<rect x="470" y="130" width="160" height="400" rx="12" fill="#ffffff" stroke="#8e44ad" stroke-width="2"/>
+<circle cx="550" cy="150" r="14" fill="#b0b7c0" stroke="#555"/><text x="550" y="155" text-anchor="middle" font-size="11" fill="#222">aimant</text>
+<circle cx="550" cy="510" r="14" fill="#b0b7c0" stroke="#555"/><text x="550" y="515" text-anchor="middle" font-size="11" fill="#222">aimant</text>
+<rect x="505" y="178" width="70" height="24" rx="12" fill="#d62828"/>
+<text x="540" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">1  +5 V</text>
+<circle cx="470" cy="190" r="5" fill="#d62828"/>
+<circle cx="630" cy="190" r="5" fill="#d62828"/>
+<rect x="505" y="248" width="70" height="24" rx="12" fill="#8e44ad"/>
+<text x="540" y="265" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">2  T→H</text>
+<circle cx="470" cy="260" r="5" fill="#8e44ad"/>
+<circle cx="630" cy="260" r="5" fill="#8e44ad"/>
+<rect x="505" y="318" width="70" height="24" rx="12" fill="#2a9bd6"/>
+<text x="540" y="335" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">3  H→T</text>
+<circle cx="470" cy="330" r="5" fill="#2a9bd6"/>
+<circle cx="630" cy="330" r="5" fill="#2a9bd6"/>
+<rect x="505" y="388" width="70" height="24" rx="12" fill="#1e8449"/>
+<text x="540" y="405" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">4  DOCK</text>
+<circle cx="470" cy="400" r="5" fill="#1e8449"/>
+<circle cx="630" cy="400" r="5" fill="#1e8449"/>
+<rect x="505" y="458" width="70" height="24" rx="12" fill="#222222"/>
+<text x="540" y="475" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">5  GND</text>
+<circle cx="470" cy="470" r="5" fill="#222222"/>
+<circle cx="630" cy="470" r="5" fill="#222222"/>
+<rect x="190" y="180" width="120" height="20" rx="10" fill="#fff" stroke="#d62828" stroke-width="2"/>
+<text x="250.0" y="194" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#d62828">2 · 5V</text>
+<path d="M310 190 L470 190" fill="none" stroke="#d62828" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="190" y="250" width="120" height="20" rx="10" fill="#fff" stroke="#8e44ad" stroke-width="2"/>
+<text x="250.0" y="264" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8e44ad">27 · TX GPIO43</text>
+<path d="M310 260 L470 260" fill="none" stroke="#8e44ad" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="190" y="320" width="120" height="20" rx="10" fill="#fff" stroke="#2a9bd6" stroke-width="2"/>
+<text x="250.0" y="334" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2a9bd6">25 · RX GPIO44</text>
+<path d="M310 330 L470 330" fill="none" stroke="#2a9bd6" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="190" y="390" width="120" height="20" rx="10" fill="#fff" stroke="#1e8449" stroke-width="2"/>
+<text x="250.0" y="404" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e8449">PCF8574 P1</text>
+<path d="M310 400 L470 400" fill="none" stroke="#1e8449" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="190" y="460" width="120" height="20" rx="10" fill="#fff" stroke="#222222" stroke-width="2"/>
+<text x="250.0" y="474" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#222222">29 · GND</text>
+<path d="M310 470 L470 470" fill="none" stroke="#222222" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="180" width="170" height="20" rx="10" fill="#fff" stroke="#d62828" stroke-width="2"/>
+<text x="875.0" y="194" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#d62828">2 · VBus · fil ROUGE</text>
+<path d="M630 190 L790 190" fill="none" stroke="#d62828" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="250" width="170" height="20" rx="10" fill="#fff" stroke="#1f5fb4" stroke-width="2"/>
+<text x="875.0" y="264" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1f5fb4">10 · RXD · fil BLEU</text>
+<path d="M630 260 L790 260" fill="none" stroke="#1f5fb4" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="320" width="170" height="20" rx="10" fill="#fff" stroke="#1e8449" stroke-width="2"/>
+<text x="875.0" y="334" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e8449">9 · TXD · fil VERT</text>
+<path d="M630 330 L790 330" fill="none" stroke="#1e8449" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="390" width="170" height="20" rx="10" fill="#fff" stroke="#222222" stroke-width="2"/>
+<text x="875.0" y="404" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#222222">5 · GND · fil NOIR</text>
+<path d="M630 400 L790 400" fill="none" stroke="#222222" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="460" width="170" height="20" rx="10" fill="#fff" stroke="#222222" stroke-width="2"/>
+<text x="875.0" y="474" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#222222">1 · GND · fil NOIR</text>
+<path d="M630 470 L790 470" fill="none" stroke="#222222" stroke-width="3.5" stroke-linejoin="round"/>
+<text x="170" y="150" text-anchor="middle" font-size="12" fill="#555">fils vers le torse (≈ 150 mm)</text>
+<text x="935" y="150" text-anchor="middle" font-size="12" fill="#555">fils vers la tête (≈ 60 mm)</text>
+<text x="540" y="552" text-anchor="middle" font-size="11" fill="#555">sens imposé par les aimants (polarités opposées)</text>
+<text x="935" y="500" text-anchor="middle" font-size="11.5" fill="#b03a2e" font-weight="bold">Câble livré : 2 rouges (VBus n°2 et 3V3 n°6)</text>
+<text x="935" y="518" text-anchor="middle" font-size="11.5" fill="#b03a2e" font-weight="bold">et 2 verts (D− n°3 et TXD n°9) : se fier à la position</text>
+<text x="935" y="540" text-anchor="middle" font-size="11.5" fill="#555">DOCK : la tête relie le contact 4 à GND (n°5)</text>
+<rect x="20" y="580" width="1060" height="100" rx="12" fill="#e9f6ec" stroke="#1e8449" stroke-width="1.5"/>
+<text x="38" y="606" font-size="15" font-weight="bold" fill="#145a32">Avant de raccorder la tête : contrôles au multimètre, toute alimentation débranchée pour 1 et 2</text>
+<text x="38" y="630" font-size="12.5" fill="#333">1. Continuité contact par contact (1 à 5), du torse à la tête  ·  2. Aucun bip entre +5 V (1) et GND (5), ni entre voisins, sauf 4-5 (reliés dans la tête)</text>
+<text x="38" y="650" font-size="12.5" fill="#333">3. Torse alimenté seul, tête débranchée : environ 5 V entre les contacts 1 et 5  ·  4. Contact 1 sous tension dès que le torse est alimenté : rien de métallique à proximité</text>
+<text x="38" y="670" font-size="12.5" fill="#333">Pour programmer la tête par son propre USB : la garder hors du cou (son USB-série partage GPIO43/44 avec le cou). Une fois fermée, elle se programme par le cou.</text>
+</svg>

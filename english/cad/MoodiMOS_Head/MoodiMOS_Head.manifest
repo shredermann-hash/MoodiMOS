@@ -1,0 +1,10 @@
+{
+  "autodeskProduct": "Fusion360",
+  "type": "script",
+  "author": "MoodiMOS",
+  "description": {
+    "": "Parametric robot head: bezel, central plate and dome"
+  },
+  "supportedOS": "windows|mac",
+  "editEnabled": true
+}

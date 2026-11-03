@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1090" font-family="Helvetica, Arial, sans-serif">
+<rect width="1100" height="1090" fill="#fbfaf7"/>
+<text x="30" y="46" font-size="30" font-weight="bold" fill="#1b2631">MoodiMOS</text>
+<text x="30" y="68" font-size="13" fill="#666">Câblage torse, extenseur, radar, cou, capteurs d'ambiance</text>
+<text x="720" y="40" text-anchor="middle" font-size="19" font-weight="bold" fill="#1b2631">Waveshare ESP32-S3-Touch-LCD-3.5-C : connecteur 2×16</text>
+<text x="720" y="62" text-anchor="middle" font-size="13" fill="#666">3,3 V sauf radar et cou (5 V) · numéros = broches du connecteur</text>
+<rect x="20" y="90" width="330" height="580" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="185.0" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Cou : pogo magnétique, 5 contacts</text>
+<rect x="380" y="90" width="300" height="580" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="530.0" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Torse : connecteur 2×16</text>
+<rect x="710" y="90" width="370" height="580" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="895.0" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Extenseur et radar</text>
+<rect x="482" y="132" width="66" height="426" rx="6" fill="#2c3e50"/>
+<rect x="490" y="141" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="154" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">1</text>
+<rect x="520" y="141" width="18" height="18" rx="3" fill="#d62828"/>
+<text x="529" y="154" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">2</text>
+<rect x="490" y="167" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="180" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">3</text>
+<rect x="520" y="167" width="18" height="18" rx="3" fill="#222222"/>
+<text x="529" y="180" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">4</text>
+<rect x="490" y="193" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="206" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">5</text>
+<rect x="520" y="193" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="206" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">6</text>
+<rect x="490" y="219" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="232" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">7</text>
+<rect x="520" y="219" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="232" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">8</text>
+<rect x="490" y="245" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="258" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">9</text>
+<rect x="520" y="245" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="258" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">10</text>
+<rect x="490" y="271" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="284" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">11</text>
+<rect x="520" y="271" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="284" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">12</text>
+<rect x="490" y="297" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="310" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">13</text>
+<rect x="520" y="297" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="310" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">14</text>
+<rect x="490" y="323" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="336" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">15</text>
+<rect x="520" y="323" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="336" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">16</text>
+<rect x="490" y="349" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="362" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">17</text>
+<rect x="520" y="349" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="362" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">18</text>
+<rect x="490" y="375" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="388" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">19</text>
+<rect x="520" y="375" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="388" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">20</text>
+<rect x="490" y="401" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="414" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">21</text>
+<rect x="520" y="401" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="414" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">22</text>
+<rect x="490" y="427" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="499" y="440" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">23</text>
+<rect x="520" y="427" width="18" height="18" rx="3" fill="#7f8c8d"/>
+<text x="529" y="440" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">24</text>
+<rect x="490" y="453" width="18" height="18" rx="3" fill="#8e44ad"/>
+<text x="499" y="466" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">25</text>
+<rect x="520" y="453" width="18" height="18" rx="3" fill="#1f5fb4"/>
+<text x="529" y="466" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">26</text>
+<rect x="490" y="479" width="18" height="18" rx="3" fill="#8e44ad"/>
+<text x="499" y="492" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">27</text>
+<rect x="520" y="479" width="18" height="18" rx="3" fill="#2a9bd6"/>
+<text x="529" y="492" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">28</text>
+<rect x="490" y="505" width="18" height="18" rx="3" fill="#222222"/>
+<text x="499" y="518" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">29</text>
+<rect x="520" y="505" width="18" height="18" rx="3" fill="#222222"/>
+<text x="529" y="518" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">30</text>
+<rect x="490" y="531" width="18" height="18" rx="3" fill="#e67e22"/>
+<text x="499" y="544" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">31</text>
+<rect x="520" y="531" width="18" height="18" rx="3" fill="#e67e22"/>
+<text x="529" y="544" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">32</text>
+<rect x="546" y="140" width="84" height="20" rx="10" fill="#fff" stroke="#d62828" stroke-width="2"/>
+<text x="588.0" y="154" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#d62828">5V</text>
+<rect x="546" y="166" width="84" height="20" rx="10" fill="#fff" stroke="#222222" stroke-width="2"/>
+<text x="588.0" y="180" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#222222">GND</text>
+<rect x="398" y="452" width="84" height="20" rx="10" fill="#fff" stroke="#8e44ad" stroke-width="2"/>
+<text x="440.0" y="466" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8e44ad">RX GPIO44</text>
+<rect x="546" y="452" width="84" height="20" rx="10" fill="#fff" stroke="#1f5fb4" stroke-width="2"/>
+<text x="588.0" y="466" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1f5fb4">SCL GPIO7</text>
+<rect x="398" y="478" width="84" height="20" rx="10" fill="#fff" stroke="#8e44ad" stroke-width="2"/>
+<text x="440.0" y="492" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8e44ad">TX GPIO43</text>
+<rect x="546" y="478" width="84" height="20" rx="10" fill="#fff" stroke="#2a9bd6" stroke-width="2"/>
+<text x="588.0" y="492" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2a9bd6">SDA GPIO8</text>
+<rect x="398" y="504" width="84" height="20" rx="10" fill="#fff" stroke="#222222" stroke-width="2"/>
+<text x="440.0" y="518" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#222222">GND</text>
+<rect x="546" y="504" width="84" height="20" rx="10" fill="#fff" stroke="#222222" stroke-width="2"/>
+<text x="588.0" y="518" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#222222">GND</text>
+<rect x="398" y="530" width="84" height="20" rx="10" fill="#fff" stroke="#e67e22" stroke-width="2"/>
+<text x="440.0" y="544" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#e67e22">3V3</text>
+<rect x="546" y="530" width="84" height="20" rx="10" fill="#fff" stroke="#e67e22" stroke-width="2"/>
+<text x="588.0" y="544" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#e67e22">3V3</text>
+<rect x="760" y="120" width="250" height="150" rx="10" fill="#e6f4ea" stroke="#1e8449" stroke-width="2"/>
+<text x="885" y="144" text-anchor="middle" font-size="15" font-weight="bold" fill="#145a32">Radar HLK-LD2410C</text>
+<text x="885" y="250" text-anchor="middle" font-size="11.5" fill="#555">présence seule, même immobile</text>
+<circle cx="760" cy="150" r="5" fill="#d62828"/>
+<text x="774" y="154" font-size="12.5" fill="#145a32">5 V</text>
+<circle cx="760" cy="176" r="5" fill="#222222"/>
+<text x="774" y="180" font-size="12.5" fill="#145a32">GND</text>
+<circle cx="760" cy="202" r="5" fill="#1e8449"/>
+<text x="774" y="206" font-size="12.5" fill="#145a32">OUT (sortie)</text>
+<path d="M630 150 L760 150" fill="none" stroke="#d62828" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M630 176 L760 176" fill="none" stroke="#222222" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="644" cy="150" r="5" fill="#d62828"/>
+<rect x="760" y="340" width="220" height="290" rx="10" fill="#fdf2e0" stroke="#b9770e" stroke-width="2"/>
+<text x="870" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#4d3305">PCF8574T</text>
+<text x="870" y="382" text-anchor="middle" font-size="11.5" fill="#555">adresse 0x22 · cavalier A1 côté VCC</text>
+<circle cx="760" cy="420" r="5" fill="#1f5fb4"/>
+<text x="772" y="424" font-size="12.5" fill="#4d3305">SCL</text>
+<circle cx="760" cy="446" r="5" fill="#2a9bd6"/>
+<text x="772" y="450" font-size="12.5" fill="#4d3305">SDA</text>
+<circle cx="760" cy="472" r="5" fill="#222222"/>
+<text x="772" y="476" font-size="12.5" fill="#4d3305">GND</text>
+<circle cx="760" cy="498" r="5" fill="#e67e22"/>
+<text x="772" y="502" font-size="12.5" fill="#4d3305">VCC 3V3</text>
+<circle cx="980" cy="420" r="5" fill="#1e8449"/>
+<text x="968" y="424" text-anchor="end" font-size="12.5" fill="#4d3305">P0 ← radar</text>
+<text x="774" y="530" font-size="11.5" fill="#555">P2 à P7 : non connectés</text>
+<text x="774" y="570" font-size="11.5" fill="#b03a2e" font-weight="bold">Jamais en 5 V (tirages SDA/SCL)</text>
+<text x="775" y="620" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1e8449">P1</text>
+<circle cx="775" cy="630" r="5" fill="#1e8449"/>
+<text x="859" y="600" text-anchor="middle" font-size="11" fill="#555">sortie cascade</text>
+<text x="820" y="620" text-anchor="middle" font-size="10" fill="#4d3305">SCL</text>
+<text x="846" y="620" text-anchor="middle" font-size="10" fill="#4d3305">SDA</text>
+<text x="872" y="620" text-anchor="middle" font-size="10" fill="#4d3305">GND</text>
+<text x="898" y="620" text-anchor="middle" font-size="10" fill="#4d3305">3V3</text>
+<circle cx="820" cy="630" r="5" fill="#1f5fb4"/>
+<circle cx="846" cy="630" r="5" fill="#2a9bd6"/>
+<circle cx="872" cy="630" r="5" fill="#222222"/>
+<circle cx="898" cy="630" r="5" fill="#e67e22"/>
+<path d="M630 462 L664 462 L664 420 L760 420" fill="none" stroke="#1f5fb4" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M630 488 L680 488 L680 446 L760 446" fill="none" stroke="#2a9bd6" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M630 514 L696 514 L696 472 L760 472" fill="none" stroke="#222222" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M630 540 L712 540 L712 498 L760 498" fill="none" stroke="#e67e22" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M995 270 L995 420 L980 420" fill="none" stroke="#1e8449" stroke-width="3.5" stroke-linejoin="round"/>
+<circle cx="995" cy="270" r="5" fill="#1e8449"/>
+<rect x="60" y="320" width="270" height="260" rx="10" fill="#f4ecf7" stroke="#8e44ad" stroke-width="2"/>
+<text x="195" y="344" text-anchor="middle" font-size="12" fill="#555">contact (côté torse) → côté tête</text>
+<circle cx="330" cy="380" r="5" fill="#d62828"/>
+<text x="74" y="384" font-size="13" font-weight="bold" fill="#4a235a">1  +5 V</text>
+<text x="160" y="384" font-size="11.5" fill="#4a235a">VBus tête (12 br. n°2)</text>
+<circle cx="330" cy="410" r="5" fill="#8e44ad"/>
+<text x="74" y="414" font-size="13" font-weight="bold" fill="#4a235a">2  T→H</text>
+<text x="160" y="414" font-size="11.5" fill="#4a235a">RXD GPIO44 (n°10)</text>
+<circle cx="330" cy="440" r="5" fill="#8e44ad"/>
+<text x="74" y="444" font-size="13" font-weight="bold" fill="#4a235a">3  H→T</text>
+<text x="160" y="444" font-size="11.5" fill="#4a235a">TXD GPIO43 (n°9)</text>
+<circle cx="330" cy="470" r="5" fill="#222222"/>
+<text x="74" y="474" font-size="13" font-weight="bold" fill="#4a235a">5  GND</text>
+<text x="160" y="474" font-size="11.5" fill="#4a235a">GND (n°1)</text>
+<circle cx="330" cy="500" r="5" fill="#1e8449"/>
+<text x="74" y="504" font-size="13" font-weight="bold" fill="#4a235a">4  DOCK</text>
+<text x="160" y="504" font-size="11.5" fill="#4a235a">relié à GND dans la tête (n°5)</text>
+<text x="74" y="556" font-size="11" fill="#555">Aimants polarisés : une tête retournée repousse.</text>
+<text x="74" y="570" font-size="11" fill="#555">Programmer par l'USB de la tête : hors du cou.</text>
+<path d="M644 150 L644 80 L345 80 L345 380 L330 380" fill="none" stroke="#d62828" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M398 462 L372 462 L372 440 L330 440" fill="none" stroke="#8e44ad" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M398 488 L356 488 L356 410 L330 410" fill="none" stroke="#8e44ad" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M398 514 L388 514 L388 470 L330 470" fill="none" stroke="#222222" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M330 500 L335 500 L335 652 L775 652 L775 630" fill="none" stroke="#1e8449" stroke-width="3.5" stroke-linejoin="round"/>
+<text x="420" y="644" font-size="11.5" fill="#1e8449" font-weight="bold">DOCK → P1 du PCF8574 (bas = tête en place)</text>
+<rect x="20" y="690" width="1060" height="240" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="550" y="716" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Capteurs d'ambiance : même bus I2C que le PCF8574, en parallèle</text>
+<text x="40" y="750" font-size="12" fill="#333" font-weight="bold">Mêmes quatre fils que le PCF8574 :</text>
+<text x="40" y="769" font-size="12" fill="#333">SCL → 26 · SDA → 28 · VCC → 3V3 · GND → masse.</text>
+<text x="40" y="788" font-size="12" fill="#333">Le plus simple : partir de la sortie cascade du</text>
+<text x="40" y="807" font-size="12" fill="#333">PCF8574 (connecteur femelle à l'autre bout du</text>
+<text x="40" y="826" font-size="12" fill="#333">module), puis dédoubler les 4 fils (soudure + gaine).</text>
+<text x="40" y="845" font-size="12" fill="#333" font-weight="bold">BH1750 : ADDR à la masse → adresse 0x23.</text>
+<text x="40" y="864" font-size="12" fill="#333">BME280 à 6 broches : CSB → 3V3, SDO → GND.</text>
+<text x="40" y="883" font-size="12" fill="#333">Test : « scan » montre 0x22, 0x23 et 0x76 (ou 0x77),</text>
+<text x="40" y="902" font-size="12" fill="#333">puis « capteurs » : la lumière suit la main.</text>
+<path d="M820 630 L820 740" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#1f5fb4"/>
+<path d="M846 630 L846 740" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#2a9bd6"/>
+<path d="M872 630 L872 740" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#222222"/>
+<path d="M898 630 L898 740" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#e67e22"/>
+<rect x="800" y="740" width="118" height="80" rx="8" fill="#ffffff" stroke="#7f8c8d" stroke-width="2"/>
+<text x="859" y="782" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">dédoublement</text>
+<text x="859" y="798" text-anchor="middle" font-size="10" fill="#555">soudure + gaine</text>
+<path d="M800 754 L540 754 L540 850" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#1f5fb4"/>
+<path d="M918 754 L1040 754 L1040 850" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#1f5fb4"/>
+<path d="M800 772 L570 772 L570 850" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#2a9bd6"/>
+<path d="M918 772 L1010 772 L1010 850" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#2a9bd6"/>
+<path d="M800 790 L600 790 L600 850" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#222222"/>
+<path d="M918 790 L980 790 L980 850" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#222222"/>
+<path d="M800 808 L630 808 L630 850" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#e67e22"/>
+<path d="M918 808 L950 808 L950 850" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke="#e67e22"/>
+<rect x="500" y="850" width="260" height="66" rx="10" fill="#eaf2fb" stroke="#1f5fb4" stroke-width="2"/>
+<rect x="860" y="850" width="210" height="66" rx="10" fill="#fff8e1" stroke="#b9770e" stroke-width="2"/>
+<circle cx="540" cy="850" r="5" fill="#1f5fb4"/>
+<text x="540" y="868" text-anchor="middle" font-size="10.5" fill="#333">SCL</text>
+<circle cx="570" cy="850" r="5" fill="#2a9bd6"/>
+<text x="570" y="868" text-anchor="middle" font-size="10.5" fill="#333">SDA</text>
+<circle cx="600" cy="850" r="5" fill="#222222"/>
+<text x="600" y="868" text-anchor="middle" font-size="10.5" fill="#333">GND</text>
+<circle cx="630" cy="850" r="5" fill="#e67e22"/>
+<text x="630" y="868" text-anchor="middle" font-size="10.5" fill="#333">VCC</text>
+<circle cx="1040" cy="850" r="5" fill="#1f5fb4"/>
+<text x="1040" y="868" text-anchor="middle" font-size="10.5" fill="#333">SCL</text>
+<circle cx="1010" cy="850" r="5" fill="#2a9bd6"/>
+<text x="1010" y="868" text-anchor="middle" font-size="10.5" fill="#333">SDA</text>
+<circle cx="980" cy="850" r="5" fill="#222222"/>
+<text x="980" y="868" text-anchor="middle" font-size="10.5" fill="#333">GND</text>
+<circle cx="950" cy="850" r="5" fill="#e67e22"/>
+<text x="950" y="868" text-anchor="middle" font-size="10.5" fill="#333">VCC</text>
+<circle cx="890" cy="850" r="5" fill="#222222"/>
+<path d="M890 850 L890 834" fill="none" stroke="#222222" stroke-width="2.5"/>
+<path d="M880 834 L900 834 M884 829 L896 829 M888 824 L892 824" fill="none" stroke="#222222" stroke-width="2"/>
+<text x="890" y="868" text-anchor="middle" font-size="10.5" fill="#333">ADDR</text>
+<text x="630" y="889" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b4f8a">BME280 · 0x76 ou 0x77</text>
+<text x="630" y="906" text-anchor="middle" font-size="11" fill="#555">flanc gauche, derrière les ouïes</text>
+<text x="965" y="889" text-anchor="middle" font-size="13" font-weight="bold" fill="#7e5109">BH1750 en boule · 0x23</text>
+<text x="965" y="906" text-anchor="middle" font-size="11" fill="#555">haut du dos, au-dessus du HP</text>
+<rect x="20" y="948" width="1060" height="130" rx="12" fill="#e9f6ec" stroke="#1e8449" stroke-width="1.5"/>
+<text x="38" y="974" font-size="15" font-weight="bold" fill="#145a32">3,3 V sur l'I2C, le PCF8574 et les capteurs · 5 V seulement sur le radar et le cou (broche 2)</text>
+<text x="38" y="996" font-size="12.5" fill="#333">PCF8574 : SCL → 26 · SDA → 28 · VCC → 31/32 (3V3) · GND → 4, 29 ou 30 · radar OUT → P0 · DOCK → P1</text>
+<text x="38" y="1016" font-size="12.5" fill="#333">BME280 et BH1750 : les mêmes quatre fils que le PCF8574, en parallèle (sortie cascade du module, puis dédoublement) · ADDR du BH1750 à la masse</text>
+<text x="38" y="1036" font-size="12.5" fill="#333">Radar : 5 V → broche 2 · GND → broche 4 · OUT → P0   ·   Cou : +5 V → 2 · T→H ← TX 27 · H→T → RX 25 · GND → 29</text>
+<text x="38" y="1056" font-size="12.5" fill="#333">Les GPIO de la caméra, de la carte TF, de l'audio et de l'USB sont réservés : n'y rien brancher. Tests : « scan », « radar », « capteurs ».</text>
+</svg>

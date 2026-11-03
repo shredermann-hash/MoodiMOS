@@ -1,0 +1,10 @@
+{
+  "autodeskProduct": "Fusion360",
+  "type": "script",
+  "author": "MoodiMOS",
+  "description": {
+    "": "MoodiMOS robot: import the generated mesh assembly"
+  },
+  "supportedOS": "windows|mac",
+  "editEnabled": true
+}

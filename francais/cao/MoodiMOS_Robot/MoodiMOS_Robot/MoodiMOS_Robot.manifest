@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "MoodiMOS",
+	"description": {
+		"": "MoodiMOS : robot complet en pièces Fusion (tête et torse), membres en maillages, contrôle des volumes"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

@@ -1,0 +1,10 @@
+{
+  "autodeskProduct": "Fusion360",
+  "type": "script",
+  "author": "MoodiMOS",
+  "description": {
+    "": "MoodiMOS robot: Fusion head and torso solids, sculpted limb meshes and volume checks"
+  },
+  "supportedOS": "windows|mac",
+  "editEnabled": true
+}

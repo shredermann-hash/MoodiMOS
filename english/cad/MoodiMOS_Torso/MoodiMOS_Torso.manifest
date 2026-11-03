@@ -1,0 +1,10 @@
+{
+  "autodeskProduct": "Fusion360",
+  "type": "script",
+  "author": "MoodiMOS",
+  "description": {
+    "": "Parametric robot torso: body, removable panels and speaker box"
+  },
+  "supportedOS": "windows|mac",
+  "editEnabled": true
+}

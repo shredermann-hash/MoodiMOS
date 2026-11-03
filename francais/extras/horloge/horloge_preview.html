@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visage horloge</title>
+<style>
+  :root { --bg: #1d1410; --fg: #f3e6d6; --muted: #b9a48f; --btn: #3a2a20; --on: #e2852d; --line: #4a362a; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.45 system-ui, sans-serif; }
+  main { max-width: 620px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: 20px; margin: 4px 0 2px; }
+  p { color: var(--muted); margin: 4px 0 12px; }
+  #stage { display: grid; place-items: center; padding: 8px 0 14px; }
+  canvas { width: min(92vw, 440px); height: auto; aspect-ratio: 1; border-radius: 50%;
+           box-shadow: 0 0 0 10px #2b1d15, 0 0 0 12px #5c4332, 0 14px 40px #000a; touch-action: none; cursor: pointer; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+  button { background: var(--btn); color: var(--fg); border: 1px solid var(--line); border-radius: 8px;
+           padding: 8px 12px; font: inherit; cursor: pointer; }
+  button.on { background: var(--on); border-color: var(--on); color: #2a1404; }
+  .hint { font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Visage horloge — édition petite</h1>
+  <p>Prototype animé pour l'écran rond de la tête (480 × 480). Dessin animé à l'ancienne : cadran
+     orangé, graduations, grands yeux à cils. Usage personnel, hors de l'édition publiée.</p>
+  <div id="stage"><canvas id="cv" width="480" height="480" aria-label="Visage horloge animé"></canvas></div>
+  <div class="row" id="moods"></div>
+  <div class="row">
+    <button id="bTalk">Parler (maintenir)</button>
+    <button id="bTime">Donner l'heure</button>
+    <button id="bBody" class="on">En pied</button>
+    <button id="bFilm">Vieux film</button>
+  </div>
+  <p class="hint">La souris est la personne : les yeux la suivent. Sur le visage : un tap l'apaise,
+     frotter le chatouille, un appui long lui fait un bisou — les mêmes gestes que sur le robot.</p>
+</main>
+<script>
+const cv = document.getElementById("cv"), g = cv.getContext("2d");
+const S = 480, R = 240;
+
+// ── Paramètres du visage (mêmes idées que FaceParams du firmware, pour un portage simple) ──
+const BASE = { eyeOpen: 1, eyeSize: 1, pupilX: 0, pupilY: 0, pupilSize: 1, browY: 0, browAngle: 0,
+               mouthOpen: 0.25, mouthWidth: 0.55, mouthCurve: 0.7, blush: 0.25, zzz: 0, hearts: 0,
+               shake: 0, hands: 0, tint: 0 };   // tint : 0 orangé, −1 mauve du sommeil, +1 rouge colère
+const EXPR = {
+  contente: {},
+  surprise: { eyeSize: 1.15, pupilSize: 0.75, browY: -0.1, mouthOpen: 0.7, mouthWidth: 0.3, mouthCurve: 0 },
+  colere:   { eyeOpen: 0.75, pupilSize: 0.85, browY: 0.06, browAngle: 0.9, mouthOpen: 0.05, mouthWidth: 0.5,
+              mouthCurve: -0.7, blush: 0, shake: 1, tint: 1 },
+  rire:     { eyeOpen: 0, browY: -0.05, mouthOpen: 1, mouthWidth: 0.85, mouthCurve: 1, blush: 0.8 },
+  bisou:    { eyeOpen: 0, browY: -0.04, mouthOpen: 0.35, mouthWidth: 0.16, mouthCurve: 0, blush: 1, hearts: 1 },
+  dodo:     { eyeOpen: 0, browY: 0.04, mouthOpen: 0, mouthWidth: 0.4, mouthCurve: 0.5, blush: 0.6, zzz: 1, tint: -1 },
+  heure:    { pupilY: -0.7, browY: -0.06, mouthOpen: 0.15, mouthWidth: 0.45, mouthCurve: 0.6, hands: 1 },
+};
+const TAU = { default: 0.12, pupilX: 0.07, pupilY: 0.07, mouthOpen: 0.06, tint: 0.3, hands: 0.25, zzz: 0.4 };
+const cur = { ...BASE };
+
+let mood = "contente", until = 0, talking = false, film = false, fullBody = true;
+let clock = 0, gaze = { x: 0, y: 0 }, idle = { x: 0, y: 0, t: 0 }, mouseSeen = 0;
+let blinkT = 0, nextBlink = 2.5, blinkPhase = -1;
+
+function play(name, seconds) { mood = name; until = seconds ? clock + seconds : 0; syncButtons(); }
+
+// ── Couleurs : orangé du cadran, glissant vers le rouge (colère) ou le mauve (sommeil) ──
+const mix = (a, b, k) => a.map((v, i) => v + (b[i] - v) * k);
+const rgb = c => `rgb(${c.map(v => Math.round(v)).join(",")})`;
+const SKIN = { amber: [[255, 158, 62], [244, 122, 32], [186, 78, 16]],
+               red:   [[248, 96, 60], [206, 40, 28], [110, 12, 10]],
+               mauve: [[230, 184, 255], [184, 124, 220], [92, 44, 132]] };
+function skin() {
+  const t = cur.tint, to = t >= 0 ? SKIN.red : SKIN.mauve, k = Math.abs(t);
+  return SKIN.amber.map((c, i) => mix(c, to[i], k));
+}
+const INK = "#2a1206";
+
+function ellipse(x, y, rx, ry) { g.beginPath(); g.ellipse(x, y, Math.max(rx, 0.1), Math.max(ry, 0.1), 0, 0, Math.PI * 2); }
+
+function drawFace(blink, still) {
+  const sk = skin();
+  // cadran : dégradé décentré, bord sombre
+  const grad = g.createRadialGradient(R * 0.82, R * 0.72, 20, R, R, R);
+  grad.addColorStop(0, rgb(sk[0])); grad.addColorStop(0.62, rgb(sk[1])); grad.addColorStop(1, rgb(sk[2]));
+  g.fillStyle = grad; g.fillRect(0, 0, S, S);
+
+  // en pied, c'est le corps qui bouge : le visage reste fixe dans son disque
+  const jx = still ? 0 : cur.shake * Math.sin(clock * 47) * 3, jy = still ? 0 : cur.shake * Math.cos(clock * 53) * 2;
+  const bob = still ? 0 : Math.sin(clock * 1.6) * 3 * (1 - cur.shake);
+  g.save(); g.translate(jx, jy + bob);
+
+  // graduations du cadran : 12 traits, plus longs à 12, 3, 6 et 9
+  g.strokeStyle = INK; g.lineCap = "round";
+  for (let i = 0; i < 12; i++) {
+    const a = i * Math.PI / 6, big = i % 3 === 0;
+    const r0 = R * (big ? 0.74 : 0.82), r1 = R * 0.93;
+    g.lineWidth = big ? 9 : 5; g.globalAlpha = big ? 0.9 : 0.7;
+    g.beginPath(); g.moveTo(R + Math.sin(a) * r0, R - Math.cos(a) * r0);
+    g.lineTo(R + Math.sin(a) * r1, R - Math.cos(a) * r1); g.stroke();
+  }
+  g.globalAlpha = 1;
+
+  // aiguilles (quand elle donne l'heure) : derrière les yeux
+  if (cur.hands > 0.02) {
+    const now = new Date(), m = now.getMinutes() + now.getSeconds() / 60, h = (now.getHours() % 12) + m / 60;
+    g.globalAlpha = cur.hands; g.strokeStyle = INK;
+    for (const [ang, len, w] of [[h * Math.PI / 6, 0.42, 12], [m * Math.PI / 30, 0.66, 8]]) {
+      g.lineWidth = w; g.beginPath(); g.moveTo(R, R + 8);
+      g.lineTo(R + Math.sin(ang) * R * len * cur.hands, R + 8 - Math.cos(ang) * R * len * cur.hands); g.stroke();
+    }
+    g.globalAlpha = 1;
+  }
+
+  // joues
+  if (cur.blush > 0.02) {
+    for (const s of [-1, 1]) {
+      const b = g.createRadialGradient(R + s * 118, R + 62, 2, R + s * 118, R + 62, 40);
+      b.addColorStop(0, `rgba(255,90,110,${0.55 * cur.blush})`); b.addColorStop(1, "rgba(255,90,110,0)");
+      g.fillStyle = b; g.fillRect(R + s * 118 - 44, R + 18, 88, 88);
+    }
+  }
+
+  // yeux : grands ovales, pupille « en part de tarte », trois cils
+  for (const s of [-1, 1]) {
+    const cx = R + s * 76, cy = R - 34, rx = 44 * cur.eyeSize, ry = 66 * cur.eyeSize;
+    const open = Math.max(0, Math.min(1, cur.eyeOpen * blink));
+    const lashY = cy - ry * (open < 0.12 ? 0.05 : open);
+    g.strokeStyle = INK; g.lineWidth = 5; g.lineCap = "round";
+    for (const k of [-1, 0, 1]) {                       // cils, en éventail vers l'extérieur
+      const a = -Math.PI / 2 + s * (0.35 + k * 0.32);
+      const x0 = cx + Math.cos(a) * rx * 0.7, y0 = lashY + (1 + Math.sin(a)) * ry * 0.25 - 2;
+      g.beginPath(); g.moveTo(x0, y0); g.lineTo(x0 + Math.cos(a) * 20, y0 + Math.sin(a) * 20); g.stroke();
+    }
+    if (open < 0.12) {                                   // œil fermé : arc rieur
+      g.lineWidth = 8; g.beginPath(); g.moveTo(cx - rx * 0.85, cy + 4);
+      g.quadraticCurveTo(cx, cy + 4 - ry * 0.55, cx + rx * 0.85, cy + 4); g.stroke();
+      continue;
+    }
+    g.save(); ellipse(cx, cy, rx, ry * open); g.clip();
+    g.fillStyle = "#fdf6e6"; g.fillRect(cx - rx, cy - ry, rx * 2, ry * 2);
+    const pr = 24 * cur.pupilSize, px = cx + cur.pupilX * (rx - pr) * 0.9, py = cy + 10 + cur.pupilY * (ry - pr * 1.4) * 0.8;
+    ellipse(px, py, pr, pr * 1.45); g.fillStyle = "#15090a"; g.fill();
+    g.beginPath(); g.moveTo(px, py);                     // la part de tarte : reflet en coin
+    g.arc(px, py, pr * 1.6, -Math.PI * 0.42, -Math.PI * 0.16); g.closePath();
+    g.fillStyle = "#fdf6e6"; g.fill();
+    g.restore();
+    ellipse(cx, cy, rx, ry * open); g.lineWidth = 6; g.strokeStyle = INK; g.stroke();
+    // sourcil
+    const by = cy - ry - 22 + cur.browY * R, tilt = cur.browAngle * 16 * s;
+    g.lineWidth = 8; g.beginPath(); g.moveTo(cx - 30, by - tilt); g.quadraticCurveTo(cx, by - 8, cx + 30, by + tilt); g.stroke();
+  }
+
+  // nez : l'axe des aiguilles
+  ellipse(R, R + 8, 7, 7); g.fillStyle = INK; g.fill();
+
+  // bouche
+  const mw = R * 0.34 * cur.mouthWidth, my = R + 78, mo = cur.mouthOpen, curve = cur.mouthCurve * 20;
+  g.strokeStyle = INK; g.lineWidth = 7; g.lineCap = "round";
+  if (mo < 0.06) {
+    g.beginPath(); g.moveTo(R - mw, my - curve * 0.5); g.quadraticCurveTo(R, my + curve, R + mw, my - curve * 0.5); g.stroke();
+  } else {
+    const h = 10 + mo * 46;
+    g.beginPath(); g.moveTo(R - mw, my - curve * 0.4);
+    g.quadraticCurveTo(R, my - curve * 0.4 - (1 - mo) * 6, R + mw, my - curve * 0.4);
+    g.quadraticCurveTo(R + mw * 0.6, my + h + curve * 0.6, R, my + h + curve * 0.6);
+    g.quadraticCurveTo(R - mw * 0.6, my + h + curve * 0.6, R - mw, my - curve * 0.4);
+    g.closePath(); g.fillStyle = "#5a0f14"; g.fill();
+    g.save(); g.clip(); ellipse(R, my + h + curve * 0.6, mw * 0.6, h * 0.42); g.fillStyle = "#f0647a"; g.fill(); g.restore();
+    g.stroke();
+  }
+  g.restore();
+
+  // « z » du sommeil, au-dessus de la tête
+  if (cur.zzz > 0.05) {
+    g.strokeStyle = INK; g.lineWidth = 6; g.lineJoin = "round";
+    for (let i = 0; i < 3; i++) {
+      const k = (clock * 0.35 + i / 3) % 1, s = 28 + 24 * k, x = R + 72 + k * 24, y = R - 128 - k * 60;
+      g.globalAlpha = Math.sin(k * Math.PI) * 0.95 * cur.zzz;
+      g.beginPath(); g.moveTo(x, y - s * 0.7); g.lineTo(x + s * 0.55, y - s * 0.7); g.lineTo(x, y); g.lineTo(x + s * 0.55, y); g.stroke();
+    }
+    g.globalAlpha = 1;
+  }
+  // petits cœurs du bisou
+  if (cur.hearts > 0.05) {
+    for (let i = 0; i < 4; i++) {
+      const k = (clock * 0.55 + i * 0.25) % 1, side = i % 2 ? 1 : -1;
+      const x = R + side * (0.52 * R + 10 * Math.sin(k * 6.28 + i)), y = R + 0.18 * R - k * 0.62 * R;
+      const s = (11 + 11 * Math.sin(k * Math.PI)) * cur.hearts;
+      g.globalAlpha = Math.sin(k * Math.PI) * cur.hearts; g.fillStyle = "#ff4d7a"; g.beginPath();
+      for (let j = 0; j < 24; j++) {
+        const t = j * Math.PI / 12, hx = 16 * Math.sin(t) ** 3;
+        const hy = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+        j ? g.lineTo(x + s / 16 * hx, y - s / 16 * hy) : g.moveTo(x + s / 16 * hx, y - s / 16 * hy);
+      }
+      g.fill();
+    }
+    g.globalAlpha = 1;
+  }
+}
+
+// ── En pied : fond doré rayonnant, disque à tranche, bras à gants blancs, jambes fines ──
+const POSE = {   // mains (g, d) par rapport au centre du disque, coude (écart, chute), pas de marche
+  contente: { l: [-180, -15], r: [150, -55], el: [10, 30], walk: 1 },
+  surprise: { l: [-165, -95], r: [165, -95], el: [25, 20], walk: 0 },
+  colere:   { l: [-92, 62], r: [92, 62], el: [75, -5], walk: 0 },
+  rire:     { l: [-70, 78], r: [70, 78], el: [70, 30], walk: 0.4 },
+  bisou:    { l: [-150, 25], r: [48, 62], el: [30, 40], walk: 0 },
+  dodo:     { l: [-128, 100], r: [128, 100], el: [18, 10], walk: 0 },
+  heure:    { l: [-150, 35], r: [118, -150], el: [30, 20], walk: 0 },
+};
+const body = { lx: -180, ly: -15, rx: 150, ry: -55, ex: 10, ey: 30, walk: 1 };
+const rnd = i => { const v = Math.sin(i * 127.1 + 311.7) * 43758.5453; return v - Math.floor(v); };
+
+function drawBackdrop() {
+  const bgd = g.createRadialGradient(R, R * 0.85, 30, R, R, R * 1.05);
+  bgd.addColorStop(0, "#f7b24a"); bgd.addColorStop(0.3, "#7a4a12"); bgd.addColorStop(1, "#140b04");
+  g.fillStyle = bgd; g.fillRect(0, 0, S, S);
+  for (let i = 0; i < 150; i++) {                        // pastilles dorées qui scintillent
+    const x = (i % 15) * 34 + ((i / 15 | 0) % 2) * 17 - 8, y = (i / 15 | 0) * 50 + 6;
+    g.globalAlpha = 0.10 + 0.14 * (0.5 + 0.5 * Math.sin(clock * (0.6 + rnd(i)) + i));
+    ellipse(x, y, 15, 15); g.fillStyle = "#e9b44c"; g.fill();
+  }
+  g.lineCap = "butt";
+  for (let i = 0; i < 36; i++) {                         // rayons : barres dorées, une sur trois plus longue
+    const a = i * Math.PI / 18 + clock * 0.04, big = i % 3 === 0;
+    const pulse = 0.5 + 0.5 * Math.sin(clock * 1.5 + i * 1.7);
+    const r0 = R * (big ? 0.60 : 0.82), r1 = R * (0.96 + 0.03 * pulse);
+    g.globalAlpha = big ? 0.55 + 0.35 * pulse : 0.5; g.lineWidth = big ? 9 : 4;
+    g.strokeStyle = big ? "#ffe9a8" : "#d9a441";
+    g.beginPath(); g.moveTo(R + Math.cos(a) * r0, R + Math.sin(a) * r0);
+    g.lineTo(R + Math.cos(a) * r1, R + Math.sin(a) * r1); g.stroke();
+  }
+  g.globalAlpha = 1; g.lineCap = "round";
+}
+
+function glove(x, y, ang, fist) {
+  g.save(); g.translate(x, y); g.rotate(ang);
+  const parts = fist ? [[0, 0, 17, 15]]
+    : [[0, 0, 15, 13], [15, -11, 10, 5.5], [20, -2, 11, 5.5], [17, 8, 10, 5.5], [-1, -15, 6, 9]];
+  g.strokeStyle = INK; g.lineWidth = 5; g.fillStyle = "#fffaf0";
+  g.beginPath(); g.roundRect(-24, -9, 12, 18, 5); g.stroke(); g.fill();          // revers du gant
+  for (const [px, py, a, b] of parts) { ellipse(px, py, a, b); g.stroke(); }
+  for (const [px, py, a, b] of parts) { ellipse(px, py, a, b); g.fill(); }
+  g.restore();
+}
+
+function drawBody(blink, dt) {
+  const p = POSE[mood] ?? POSE.contente, k = 1 - Math.exp(-dt / 0.14);
+  body.lx += (p.l[0] - body.lx) * k; body.ly += (p.l[1] - body.ly) * k;
+  body.rx += (p.r[0] - body.rx) * k; body.ry += (p.r[1] - body.ry) * k;
+  body.ex += (p.el[0] - body.ex) * k; body.ey += (p.el[1] - body.ey) * k; body.walk += (p.walk - body.walk) * k;
+  drawBackdrop();
+
+  const ph = clock * 5, rb = 120, laugh = mood === "rire" ? Math.abs(Math.sin(clock * 14)) * 7 : 0;
+  const cx = R + cur.shake * Math.sin(clock * 47) * 3;
+  const cy = 212 - Math.abs(Math.sin(ph)) * 7 * body.walk - laugh + (mood === "dodo" ? Math.sin(clock * 1.2) * 3 : 0);
+  const sk = skin(), ground = 436;
+
+  // halo derrière le personnage
+  const halo = g.createRadialGradient(cx, cy, rb * 0.6, cx, cy, rb * 1.9);
+  halo.addColorStop(0, "rgba(255,225,150,0.75)"); halo.addColorStop(1, "rgba(255,200,90,0)");
+  g.fillStyle = halo; g.fillRect(0, 0, S, S);
+
+  // jambes fines et souliers blancs
+  for (const s of [-1, 1]) {
+    const sw = Math.sin(ph + (s < 0 ? 0 : Math.PI)) * body.walk;
+    const fx = cx + s * 30 + sw * 20, fy = ground - Math.max(0, sw) * 18, hx = cx + s * 20, hy = cy + rb - 8;
+    g.strokeStyle = "#3a1a0c"; g.lineWidth = 8; g.beginPath(); g.moveTo(hx, hy);
+    g.quadraticCurveTo((hx + fx) / 2 + s * 10 + sw * 14, (hy + fy) / 2, fx, fy - 8); g.stroke();
+    g.save(); g.translate(fx + s * 10, fy); g.rotate(-Math.max(0, sw) * 0.35 * s);
+    ellipse(0, 0, 25, 13); g.fillStyle = "#fffaf0"; g.fill(); g.lineWidth = 5; g.strokeStyle = INK; g.stroke();
+    g.restore();
+  }
+
+  // bras : derrière le disque, les gants seront dessinés par-dessus
+  const wave = mood === "contente" ? Math.sin(clock * 7) : 0, hands = [];
+  for (const s of [-1, 1]) {
+    const sx = cx + s * rb * 0.9, sy = cy + 14;
+    const hx = cx + (s < 0 ? body.lx : body.rx) + (s > 0 ? wave * 12 : 0), hy = cy + (s < 0 ? body.ly : body.ry) - (s > 0 ? Math.abs(wave) * 6 : 0);
+    const qx = (sx + hx) / 2 + s * body.ex, qy = (sy + hy) / 2 + body.ey;
+    for (const [w, col] of [[24, INK], [16, rgb(sk[1])]]) {
+      g.strokeStyle = col; g.lineWidth = w; g.beginPath(); g.moveTo(sx, sy); g.quadraticCurveTo(qx, qy, hx, hy); g.stroke();
+    }
+    hands.push([hx, hy, Math.atan2(hy - qy, hx - qx)]);
+  }
+
+  // tranche du disque puis cadran avec le visage
+  ellipse(cx - 9, cy + 3, rb, rb); g.fillStyle = rgb(sk[2]); g.fill(); g.lineWidth = 5; g.strokeStyle = INK; g.stroke();
+  g.save(); ellipse(cx, cy, rb, rb); g.clip();
+  g.translate(cx, cy); g.scale(rb / R, rb / R); g.translate(-R, -R);
+  drawFace(blink, true);
+  g.restore();
+  ellipse(cx, cy, rb, rb); g.lineWidth = 5; g.strokeStyle = INK; g.stroke();
+
+  for (const [hx, hy, a] of hands) glove(hx, hy, a, mood === "colere");
+}
+
+function filmEffect() {
+  // vignette chaude, grain léger et quelques poussières : pellicule ancienne
+  const v = g.createRadialGradient(R, R, R * 0.55, R, R, R * 1.02);
+  v.addColorStop(0, "rgba(60,20,0,0)"); v.addColorStop(1, "rgba(40,10,0,0.45)");
+  g.fillStyle = v; g.fillRect(0, 0, S, S);
+  g.fillStyle = `rgba(255,230,190,${0.03 + 0.02 * Math.sin(clock * 31)})`; g.fillRect(0, 0, S, S);
+  for (let i = 0; i < 70; i++) {
+    g.fillStyle = Math.random() < 0.5 ? "rgba(255,240,210,0.10)" : "rgba(30,10,0,0.12)";
+    g.fillRect(Math.random() * S, Math.random() * S, 1.6, 1.6);
+  }
+  if (Math.random() < 0.04) {                           // rayure verticale fugace
+    g.fillStyle = "rgba(255,240,210,0.12)"; g.fillRect(Math.random() * S, 0, 1.5, S);
+  }
+}
+
+function blinkFactor(dt) {
+  if (blinkPhase < 0) {
+    blinkT += dt;
+    if (blinkT > nextBlink) { blinkPhase = 0; blinkT = 0; nextBlink = 2 + Math.random() * 3; }
+    return 1;
+  }
+  blinkPhase += dt / 0.16;
+  if (blinkPhase >= 1) { blinkPhase = -1; return 1; }
+  return Math.abs(1 - 2 * blinkPhase);
+}
+
+let last = performance.now();
+function tick(now) {
+  const dt = Math.min(0.05, (now - last) / 1000); last = now; clock += dt;
+  if (until && clock >= until) play("contente");
+  const target = { ...BASE, ...EXPR[mood] };
+  // regard : la souris si elle est là, sinon de petits coups d'œil au hasard
+  if (mood === "contente" || mood === "surprise" || mood === "colere") {
+    if (clock - mouseSeen < 2) { target.pupilX = gaze.x; target.pupilY = gaze.y; }
+    else {
+      idle.t -= dt;
+      if (idle.t <= 0) { idle = { x: (Math.random() - 0.5) * 1.2, y: (Math.random() - 0.5) * 0.6, t: 0.8 + Math.random() * 2.2 }; }
+      target.pupilX = idle.x; target.pupilY = idle.y;
+    }
+  }
+  if (talking) target.mouthOpen = 0.25 + 0.55 * Math.abs(Math.sin(clock * 11) * Math.sin(clock * 3.3 + 1));
+  for (const k in BASE) cur[k] += (target[k] - cur[k]) * (1 - Math.exp(-dt / (TAU[k] ?? TAU.default)));
+  const blink = mood === "dodo" ? 1 : blinkFactor(dt);
+  if (fullBody) drawBody(blink, dt); else drawFace(blink);
+  if (film) filmEffect();
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+// ── Commandes ──
+const MOODS = [["contente", "Contente"], ["surprise", "Surprise"], ["colere", "En colère"], ["rire", "Chatouilles"],
+               ["bisou", "Bisou"], ["dodo", "Dodo"]];
+const moodsEl = document.getElementById("moods");
+for (const [k, label] of MOODS) {
+  const b = document.createElement("button"); b.textContent = label; b.dataset.k = k;
+  b.onclick = () => play(k, k === "contente" || k === "dodo" ? 0 : 3); moodsEl.appendChild(b);
+}
+function syncButtons() { for (const b of moodsEl.children) b.classList.toggle("on", b.dataset.k === mood); }
+syncButtons();
+const bTalk = document.getElementById("bTalk");
+const talk = v => { talking = v; bTalk.classList.toggle("on", v); };
+bTalk.addEventListener("pointerdown", () => talk(true));
+addEventListener("pointerup", () => talk(false));
+document.getElementById("bTime").onclick = () => play("heure", 5);
+document.getElementById("bBody").onclick = e => { fullBody = !fullBody; e.target.classList.toggle("on", fullBody); };
+document.getElementById("bFilm").onclick = e => { film = !film; e.target.classList.toggle("on", film); };
+
+// la souris est la personne
+addEventListener("pointermove", e => {
+  const r = cv.getBoundingClientRect();
+  gaze = { x: Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width * 0.6))),
+           y: Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height * 0.6))) };
+  mouseSeen = clock;
+});
+// gestes du robot : tap = apaise (réveille), frotter = chatouilles, appui long immobile = bisou
+let down = null;
+cv.addEventListener("pointerdown", e => { down = { x: e.clientX, y: e.clientY, t: clock, path: 0, done: false }; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener("pointermove", e => {
+  if (!down) return;
+  down.path += Math.hypot(e.clientX - down.x, e.clientY - down.y); down.x = e.clientX; down.y = e.clientY;
+  if (down.path > 120) { play("rire", 1.6); down.path = 0; down.done = true; }
+});
+cv.addEventListener("pointerup", () => {
+  if (down && !down.done && clock - down.t < 0.5) play("contente");
+  down = null;
+});
+setInterval(() => { if (down && !down.done && down.path < 40 && clock - down.t >= 0.8) { down.done = true; play("bisou", 3); } }, 60);
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "MoodiMOS",
+	"description": {
+		"": "MoodiMOS : assemblage des pièces (STL du générateur), couleurs de la fiche"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "MoodiMOS",
+	"description": {
+		"": "Tête MoodiMOS paramétrique : cerclage avant, plaque centrale en goutte, dos bombé"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

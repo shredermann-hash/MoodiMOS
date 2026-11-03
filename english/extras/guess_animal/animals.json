@@ -1,0 +1,579 @@
+{
+  "note": "French Guess the Animal dataset. Each animal lists yes and uncertain question identifiers; all other answers are no. An inverse question reverses the stored characteristic. Spoken questions, animal names and schema keys remain French to match the robot.",
+  "questions": {
+    "eau": "Est-ce qu'il vit dans l'eau ?",
+    "mer": "Est-ce qu'il vit dans la mer ?",
+    "vole": "Est-ce qu'il sait voler ?",
+    "plumes": "Est-ce qu'il a des plumes ?",
+    "poils": "Est-ce qu'il a des poils ?",
+    "ferme": "Est-ce qu'il vit à la ferme ?",
+    "maison": "Est-ce qu'il peut vivre dans une maison, avec nous ?",
+    "zoo": "Est-ce qu'on va le voir au zoo ?",
+    "gros": "Est-ce qu'il est plus gros que toi ?",
+    "tres_gros": "Est-ce qu'il est énorme, plus gros qu'une voiture ?",
+    "petit": "Est-ce qu'il est tout petit, plus petit que ta main ?",
+    "quatre_pattes": "Est-ce qu'il marche à quatre pattes ?",
+    "sans_pattes": {
+      "texte": "Est-ce qu'il a des pattes ?",
+      "inverse": true
+    },
+    "rayures": "Est-ce qu'il a des rayures ?",
+    "taches": "Est-ce qu'il a des taches ?",
+    "noir_blanc": "Est-ce qu'il est noir et blanc ?",
+    "orange": "Est-ce qu'il est jaune ou orange ?",
+    "rose": "Est-ce qu'il est rose ?",
+    "cornes": "Est-ce qu'il a une corne, ou des cornes sur la tête ?",
+    "long_cou": "Est-ce qu'il a un très long cou ?",
+    "trompe": "Est-ce qu'il a une trompe ?",
+    "carapace": "Est-ce qu'il a une carapace, ou une coquille ?",
+    "insecte": "Est-ce que c'est une petite bête, comme une fourmi ?",
+    "saute": "Est-ce qu'il fait de grands sauts ?",
+    "dangereux": "Est-ce qu'il peut mordre ou piquer très fort ?",
+    "lait": "Est-ce qu'il nous donne du lait ?",
+    "oeufs": "Est-ce qu'il pond des œufs ?",
+    "criniere": "Est-ce qu'il a une crinière, des longs poils sur le cou ?",
+    "laine": "Est-ce qu'il a de la laine ?",
+    "oreilles": "Est-ce qu'il a de grandes oreilles ?",
+    "arbres": "Est-ce qu'il grimpe aux arbres ?",
+    "magique": "Est-ce qu'il est magique ?",
+    "disparu": "Est-ce que c'est un animal d'il y a très très longtemps ?",
+    "miaou": "Est-ce qu'il fait miaou ?",
+    "aboie": "Est-ce qu'il fait ouaf ouaf ?",
+    "meuh": "Est-ce qu'il fait meuh ?",
+    "bee": "Est-ce qu'il fait bêêê ?",
+    "groin": "Est-ce qu'il fait groin-groin ?",
+    "cotcot": "Est-ce qu'il fait cot-cot ?",
+    "coincoin": "Est-ce qu'il fait coin-coin ?",
+    "houhou": "Est-ce qu'il fait hou-hou ?",
+    "bzz": "Est-ce qu'il fait bzzz ?",
+    "croa": "Est-ce qu'il fait croa-croa ?",
+    "hennit": "Est-ce qu'il fait hiii, comme un cheval ?",
+    "rugit": "Est-ce qu'il rugit très fort, grrr ?"
+  },
+  "animals": [
+    {
+      "nom": "un chat",
+      "oui": [
+        "poils",
+        "maison",
+        "quatre_pattes",
+        "miaou",
+        "arbres"
+      ],
+      "doute": [
+        "rayures",
+        "saute",
+        "noir_blanc",
+        "orange"
+      ]
+    },
+    {
+      "nom": "un chien",
+      "oui": [
+        "poils",
+        "maison",
+        "quatre_pattes",
+        "aboie"
+      ],
+      "doute": [
+        "gros",
+        "taches",
+        "dangereux",
+        "noir_blanc",
+        "oreilles"
+      ]
+    },
+    {
+      "nom": "une vache",
+      "oui": [
+        "poils",
+        "ferme",
+        "gros",
+        "quatre_pattes",
+        "taches",
+        "cornes",
+        "lait",
+        "noir_blanc",
+        "meuh"
+      ],
+      "doute": []
+    },
+    {
+      "nom": "un cochon",
+      "oui": [
+        "ferme",
+        "quatre_pattes",
+        "rose",
+        "groin"
+      ],
+      "doute": [
+        "gros",
+        "poils"
+      ]
+    },
+    {
+      "nom": "un cheval",
+      "oui": [
+        "poils",
+        "ferme",
+        "gros",
+        "quatre_pattes",
+        "criniere",
+        "hennit"
+      ],
+      "doute": [
+        "saute"
+      ]
+    },
+    {
+      "nom": "un mouton",
+      "oui": [
+        "ferme",
+        "quatre_pattes",
+        "laine",
+        "poils",
+        "bee"
+      ],
+      "doute": [
+        "gros",
+        "cornes",
+        "lait"
+      ]
+    },
+    {
+      "nom": "une poule",
+      "oui": [
+        "plumes",
+        "ferme",
+        "oeufs",
+        "cotcot"
+      ],
+      "doute": [
+        "vole",
+        "orange"
+      ]
+    },
+    {
+      "nom": "un canard",
+      "oui": [
+        "plumes",
+        "ferme",
+        "oeufs",
+        "vole",
+        "coincoin"
+      ],
+      "doute": [
+        "eau",
+        "orange"
+      ]
+    },
+    {
+      "nom": "un lapin",
+      "oui": [
+        "poils",
+        "quatre_pattes",
+        "saute",
+        "oreilles"
+      ],
+      "doute": [
+        "maison",
+        "ferme"
+      ]
+    },
+    {
+      "nom": "une souris",
+      "oui": [
+        "poils",
+        "quatre_pattes",
+        "petit"
+      ],
+      "doute": [
+        "maison",
+        "oreilles"
+      ]
+    },
+    {
+      "nom": "un lion",
+      "oui": [
+        "poils",
+        "gros",
+        "quatre_pattes",
+        "zoo",
+        "dangereux",
+        "orange",
+        "criniere",
+        "rugit"
+      ],
+      "doute": []
+    },
+    {
+      "nom": "un tigre",
+      "oui": [
+        "poils",
+        "gros",
+        "quatre_pattes",
+        "zoo",
+        "dangereux",
+        "orange",
+        "rayures",
+        "rugit"
+      ],
+      "doute": []
+    },
+    {
+      "nom": "un éléphant",
+      "oui": [
+        "gros",
+        "tres_gros",
+        "quatre_pattes",
+        "zoo",
+        "trompe",
+        "oreilles"
+      ],
+      "doute": [
+        "poils"
+      ]
+    },
+    {
+      "nom": "une girafe",
+      "oui": [
+        "poils",
+        "gros",
+        "quatre_pattes",
+        "zoo",
+        "long_cou",
+        "taches",
+        "orange"
+      ],
+      "doute": [
+        "cornes",
+        "tres_gros"
+      ]
+    },
+    {
+      "nom": "un zèbre",
+      "oui": [
+        "poils",
+        "gros",
+        "quatre_pattes",
+        "zoo",
+        "rayures",
+        "noir_blanc",
+        "criniere"
+      ],
+      "doute": [
+        "hennit"
+      ]
+    },
+    {
+      "nom": "un singe",
+      "oui": [
+        "poils",
+        "zoo",
+        "arbres"
+      ],
+      "doute": [
+        "gros",
+        "saute",
+        "quatre_pattes"
+      ]
+    },
+    {
+      "nom": "un ours",
+      "oui": [
+        "poils",
+        "gros",
+        "quatre_pattes",
+        "dangereux"
+      ],
+      "doute": [
+        "zoo",
+        "arbres",
+        "rugit"
+      ]
+    },
+    {
+      "nom": "un panda",
+      "oui": [
+        "poils",
+        "gros",
+        "quatre_pattes",
+        "zoo",
+        "noir_blanc"
+      ],
+      "doute": [
+        "arbres",
+        "taches"
+      ]
+    },
+    {
+      "nom": "un kangourou",
+      "oui": [
+        "poils",
+        "gros",
+        "zoo",
+        "saute"
+      ],
+      "doute": [
+        "quatre_pattes",
+        "oreilles"
+      ]
+    },
+    {
+      "nom": "un crocodile",
+      "oui": [
+        "eau",
+        "gros",
+        "quatre_pattes",
+        "zoo",
+        "dangereux",
+        "oeufs"
+      ],
+      "doute": []
+    },
+    {
+      "nom": "un serpent",
+      "oui": [
+        "sans_pattes",
+        "dangereux",
+        "oeufs"
+      ],
+      "doute": [
+        "zoo",
+        "gros",
+        "rayures",
+        "taches"
+      ]
+    },
+    {
+      "nom": "une tortue",
+      "oui": [
+        "quatre_pattes",
+        "carapace",
+        "oeufs"
+      ],
+      "doute": [
+        "eau",
+        "maison"
+      ]
+    },
+    {
+      "nom": "une grenouille",
+      "oui": [
+        "eau",
+        "quatre_pattes",
+        "saute",
+        "oeufs",
+        "croa"
+      ],
+      "doute": [
+        "petit"
+      ]
+    },
+    {
+      "nom": "un poisson",
+      "oui": [
+        "eau",
+        "sans_pattes",
+        "oeufs"
+      ],
+      "doute": [
+        "petit",
+        "orange",
+        "maison",
+        "rayures",
+        "mer"
+      ]
+    },
+    {
+      "nom": "un requin",
+      "oui": [
+        "eau",
+        "mer",
+        "sans_pattes",
+        "gros",
+        "dangereux"
+      ],
+      "doute": [
+        "oeufs",
+        "tres_gros",
+        "zoo"
+      ]
+    },
+    {
+      "nom": "une baleine",
+      "oui": [
+        "eau",
+        "mer",
+        "sans_pattes",
+        "gros",
+        "tres_gros"
+      ],
+      "doute": []
+    },
+    {
+      "nom": "un dauphin",
+      "oui": [
+        "eau",
+        "mer",
+        "sans_pattes",
+        "gros",
+        "saute"
+      ],
+      "doute": [
+        "zoo"
+      ]
+    },
+    {
+      "nom": "une pieuvre",
+      "oui": [
+        "eau",
+        "mer",
+        "oeufs"
+      ],
+      "doute": [
+        "sans_pattes",
+        "rose",
+        "orange",
+        "gros"
+      ]
+    },
+    {
+      "nom": "un papillon",
+      "oui": [
+        "vole",
+        "insecte",
+        "petit",
+        "oeufs"
+      ],
+      "doute": [
+        "taches",
+        "orange"
+      ]
+    },
+    {
+      "nom": "une abeille",
+      "oui": [
+        "vole",
+        "insecte",
+        "petit",
+        "rayures",
+        "dangereux",
+        "orange",
+        "oeufs",
+        "bzz"
+      ],
+      "doute": []
+    },
+    {
+      "nom": "une coccinelle",
+      "oui": [
+        "vole",
+        "insecte",
+        "petit",
+        "taches",
+        "oeufs"
+      ],
+      "doute": [
+        "carapace"
+      ]
+    },
+    {
+      "nom": "un escargot",
+      "oui": [
+        "sans_pattes",
+        "carapace",
+        "petit",
+        "oeufs"
+      ],
+      "doute": [
+        "insecte"
+      ]
+    },
+    {
+      "nom": "un hibou",
+      "oui": [
+        "plumes",
+        "vole",
+        "oeufs",
+        "houhou"
+      ],
+      "doute": [
+        "arbres"
+      ]
+    },
+    {
+      "nom": "un pingouin",
+      "oui": [
+        "plumes",
+        "eau",
+        "noir_blanc",
+        "oeufs",
+        "zoo"
+      ],
+      "doute": [
+        "mer"
+      ]
+    },
+    {
+      "nom": "un dinosaure",
+      "oui": [
+        "gros",
+        "tres_gros",
+        "dangereux",
+        "oeufs",
+        "disparu",
+        "rugit"
+      ],
+      "doute": [
+        "quatre_pattes",
+        "long_cou",
+        "cornes",
+        "vole"
+      ]
+    },
+    {
+      "nom": "une licorne",
+      "oui": [
+        "poils",
+        "gros",
+        "quatre_pattes",
+        "cornes",
+        "magique",
+        "criniere"
+      ],
+      "doute": [
+        "vole",
+        "hennit"
+      ]
+    },
+    {
+      "nom": "un rhinocéros",
+      "oui": [
+        "gros",
+        "quatre_pattes",
+        "zoo",
+        "cornes"
+      ],
+      "doute": [
+        "tres_gros",
+        "dangereux",
+        "poils"
+      ]
+    },
+    {
+      "nom": "un hippopotame",
+      "oui": [
+        "eau",
+        "gros",
+        "quatre_pattes",
+        "zoo"
+      ],
+      "doute": [
+        "tres_gros",
+        "dangereux",
+        "rose"
+      ]
+    }
+  ]
+}

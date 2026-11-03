@@ -1,0 +1,7 @@
+# Fichiers personnels de la maison et environnements locaux / Private household files and local environments
+**/personnes.json
+**/people.json
+**/Household_local.h
+**/.venv/
+**/__pycache__/
+.DS_Store

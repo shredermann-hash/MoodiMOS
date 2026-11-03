@@ -1,0 +1,423 @@
+{
+  "meshes": {
+    "arm_left.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 18.426408538170527,
+      "dimensions_mm": [
+        95.7081298828125,
+        26.836612701416016,
+        36.64266586303711
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "arm_right.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 18.426408538170527,
+      "dimensions_mm": [
+        95.7081298828125,
+        26.836612701416016,
+        36.64266586303711
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "base.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 322.75427754227553,
+      "dimensions_mm": [
+        150.0,
+        150.0,
+        20.0
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "bezel_marks_stencil.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 4.535009703393964,
+      "dimensions_mm": [
+        83.5999984741211,
+        83.5999984741211,
+        1.600000023841858
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "bezel_side_mask.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 2.1857133219588962,
+      "dimensions_mm": [
+        92.445556640625,
+        90.6227798461914,
+        6.5
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "glove_cuff_left.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 11.952926451423167,
+      "dimensions_mm": [
+        27.642223358154297,
+        29.04567527770996,
+        35.62682342529297
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "glove_cuff_right.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 11.952926451423167,
+      "dimensions_mm": [
+        27.642223358154297,
+        29.04567527770996,
+        35.62682342529297
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "head_back.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 30.019768987396116,
+      "dimensions_mm": [
+        96.55162811279297,
+        89.0,
+        32.0
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "head_bezel.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 12.266726709535726,
+      "dimensions_mm": [
+        89.64556121826172,
+        87.8227767944336,
+        12.0
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "head_plate.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 46.42844273114849,
+      "dimensions_mm": [
+        91.99783325195312,
+        107.29926300048828,
+        15.0
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "leg_left.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 12.176958211723383,
+      "dimensions_mm": [
+        22.196876525878906,
+        18.0319881439209,
+        68.35638427734375
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "leg_right.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 12.176958211723383,
+      "dimensions_mm": [
+        22.196876525878906,
+        18.0319881439209,
+        68.35638427734375
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "shoulder_left.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 2.6114377596224525,
+      "dimensions_mm": [
+        17.002635955810547,
+        17.00271987915039,
+        19.018959045410156
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "shoulder_right.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 2.6114377596224525,
+      "dimensions_mm": [
+        17.002635955810547,
+        17.00271987915039,
+        19.018959045410156
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "sneaker_left.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 78.67803390425095,
+      "dimensions_mm": [
+        50.12538146972656,
+        74.69761657714844,
+        46.01110076904297
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "sneaker_magnet_jig_left.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 4.042505664054117,
+      "dimensions_mm": [
+        51.99018859863281,
+        76.559326171875,
+        2.799999952316284
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "sneaker_magnet_jig_right.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 4.042505665457168,
+      "dimensions_mm": [
+        51.99018859863281,
+        76.559326171875,
+        2.799999952316284
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "sneaker_right.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 78.67803390425095,
+      "dimensions_mm": [
+        50.12538146972656,
+        74.69761657714844,
+        46.01110076904297
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "torso_back.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 32.440448690084494,
+      "dimensions_mm": [
+        82.0,
+        120.5,
+        36.5
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "torso_body.stl": {
+      "status": "NoError",
+      "components": 2,
+      "volume_cm3": 48.86489643905757,
+      "dimensions_mm": [
+        82.0,
+        126.5,
+        42.5
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "torso_frame.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 1.4154904868068938,
+      "dimensions_mm": [
+        66.0,
+        112.5,
+        0.8500000238418579
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "torso_front.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 10.421690711473715,
+      "dimensions_mm": [
+        81.39765167236328,
+        119.89765167236328,
+        2.5
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    },
+    "torso_speaker_box.stl": {
+      "status": "NoError",
+      "components": 1,
+      "volume_cm3": 6.702706573875078,
+      "dimensions_mm": [
+        43.599998474121094,
+        43.599998474121094,
+        22.100000381469727
+      ],
+      "min_z_mm": 0.0,
+      "closed": true,
+      "ok": true
+    }
+  },
+  "failures": [],
+  "scope": "Closing and assembly of printable parts; no component certification.",
+  "component_parameters": {
+    "ok": true,
+    "changed": [],
+    "preserved": [
+      "backFillet",
+      "backT",
+      "bmeBoxX",
+      "bmeH",
+      "bmeT",
+      "bmeW",
+      "bmeWallT",
+      "bossD",
+      "boxT",
+      "camD",
+      "camFit",
+      "camModH",
+      "camModT",
+      "camModW",
+      "camOffZ",
+      "cradleT",
+      "domeBaseD",
+      "domeD",
+      "domeRingH",
+      "domeZ",
+      "faceBossD",
+      "faceBossL",
+      "facePilotD",
+      "faceScrewD",
+      "fpcL",
+      "fpcT",
+      "fpcU",
+      "fpcW",
+      "fpcX",
+      "frontFillet",
+      "glassBot",
+      "glassFit",
+      "glassH",
+      "glassR",
+      "glassT",
+      "glassW",
+      "grilleH",
+      "grilleN",
+      "grillePitch",
+      "grilleW",
+      "hdrL",
+      "hdrU",
+      "hdrW",
+      "hdrX",
+      "hdrZ",
+      "holeX",
+      "holeZ",
+      "legBossD",
+      "legHoleDepth",
+      "limbMagD",
+      "limbMagT",
+      "lipFit",
+      "lipH",
+      "lipW",
+      "neckD",
+      "neckH",
+      "neckU",
+      "pcfH",
+      "pcfL",
+      "pcfT",
+      "pcfU",
+      "pegD",
+      "pogoBodyL",
+      "pogoFaceT",
+      "pogoL",
+      "pogoW",
+      "pwrD",
+      "pwrU",
+      "pwrZ",
+      "radFit",
+      "radH",
+      "radT",
+      "radW",
+      "radX0",
+      "railT",
+      "screwD",
+      "screwDecoD",
+      "screwDecoT",
+      "screwHeadD",
+      "screwHeadT",
+      "shHoleDepth",
+      "shoulderBossD",
+      "shoulderDown",
+      "skinT",
+      "socketD",
+      "socketT",
+      "spkD",
+      "spkT",
+      "spkVol",
+      "spkX",
+      "spkZ",
+      "standoffU",
+      "torsoD",
+      "torsoH",
+      "torsoW",
+      "usbH",
+      "usbU",
+      "usbW",
+      "ventL",
+      "ventN",
+      "ventPitch",
+      "ventW",
+      "ventZ",
+      "wallT",
+      "winH",
+      "winW"
+    ],
+    "design_overrides": {
+      "cornerR": 8,
+      "legX": 27.5
+    }
+  },
+  "count": 23,
+  "ok": true
+}

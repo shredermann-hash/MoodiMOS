@@ -1,0 +1,6 @@
+# Private household data and local build environments.
+brain/people.json
+firmware/moodimos-torso/Household_local.h
+**/.venv/
+**/__pycache__/
+.DS_Store

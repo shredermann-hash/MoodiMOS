@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" font-family="Helvetica, Arial, sans-serif">
+<rect width="1100" height="700" fill="#fbfaf7"/>
+<text x="30" y="46" font-size="30" font-weight="bold" fill="#1b2631">MoodiMOS</text>
+<text x="30" y="68" font-size="13" fill="#666">Neck pogo wiring</text>
+<text x="720" y="40" text-anchor="middle" font-size="19" font-weight="bold" fill="#1b2631">5-contact magnetic pogo: torso ↔ head</text>
+<text x="720" y="62" text-anchor="middle" font-size="13" fill="#666">2.5 mm pitch · spring pins on torso side, pads on head side · magnets built into both ends · flexible 26-28 AWG wire</text>
+<rect x="20" y="90" width="300" height="470" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="170.0" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Torso (2×16 header)</text>
+<rect x="400" y="90" width="300" height="470" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="550.0" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Neck pogo</text>
+<rect x="780" y="90" width="300" height="470" rx="14" fill="#f3f5f7" stroke="#d5d9de" stroke-width="1.5"/>
+<text x="930.0" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Head (12-pin connector)</text>
+<rect x="470" y="130" width="160" height="400" rx="12" fill="#ffffff" stroke="#8e44ad" stroke-width="2"/>
+<circle cx="550" cy="150" r="14" fill="#b0b7c0" stroke="#555"/><text x="550" y="155" text-anchor="middle" font-size="11" fill="#222">magnet</text>
+<circle cx="550" cy="510" r="14" fill="#b0b7c0" stroke="#555"/><text x="550" y="515" text-anchor="middle" font-size="11" fill="#222">magnet</text>
+<rect x="505" y="178" width="70" height="24" rx="12" fill="#d62828"/>
+<text x="540" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">1  +5 V</text>
+<circle cx="470" cy="190" r="5" fill="#d62828"/>
+<circle cx="630" cy="190" r="5" fill="#d62828"/>
+<rect x="505" y="248" width="70" height="24" rx="12" fill="#8e44ad"/>
+<text x="540" y="265" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">2  T→H</text>
+<circle cx="470" cy="260" r="5" fill="#8e44ad"/>
+<circle cx="630" cy="260" r="5" fill="#8e44ad"/>
+<rect x="505" y="318" width="70" height="24" rx="12" fill="#2a9bd6"/>
+<text x="540" y="335" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">3  H→T</text>
+<circle cx="470" cy="330" r="5" fill="#2a9bd6"/>
+<circle cx="630" cy="330" r="5" fill="#2a9bd6"/>
+<rect x="505" y="388" width="70" height="24" rx="12" fill="#1e8449"/>
+<text x="540" y="405" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">4  DOCK</text>
+<circle cx="470" cy="400" r="5" fill="#1e8449"/>
+<circle cx="630" cy="400" r="5" fill="#1e8449"/>
+<rect x="505" y="458" width="70" height="24" rx="12" fill="#222222"/>
+<text x="540" y="475" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">5  GND</text>
+<circle cx="470" cy="470" r="5" fill="#222222"/>
+<circle cx="630" cy="470" r="5" fill="#222222"/>
+<rect x="190" y="180" width="120" height="20" rx="10" fill="#fff" stroke="#d62828" stroke-width="2"/>
+<text x="250.0" y="194" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#d62828">2 · 5V</text>
+<path d="M310 190 L470 190" fill="none" stroke="#d62828" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="190" y="250" width="120" height="20" rx="10" fill="#fff" stroke="#8e44ad" stroke-width="2"/>
+<text x="250.0" y="264" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8e44ad">27 · TX GPIO43</text>
+<path d="M310 260 L470 260" fill="none" stroke="#8e44ad" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="190" y="320" width="120" height="20" rx="10" fill="#fff" stroke="#2a9bd6" stroke-width="2"/>
+<text x="250.0" y="334" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2a9bd6">25 · RX GPIO44</text>
+<path d="M310 330 L470 330" fill="none" stroke="#2a9bd6" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="190" y="390" width="120" height="20" rx="10" fill="#fff" stroke="#1e8449" stroke-width="2"/>
+<text x="250.0" y="404" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e8449">PCF8574 P1</text>
+<path d="M310 400 L470 400" fill="none" stroke="#1e8449" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="190" y="460" width="120" height="20" rx="10" fill="#fff" stroke="#222222" stroke-width="2"/>
+<text x="250.0" y="474" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#222222">29 · GND</text>
+<path d="M310 470 L470 470" fill="none" stroke="#222222" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="180" width="170" height="20" rx="10" fill="#fff" stroke="#d62828" stroke-width="2"/>
+<text x="875.0" y="194" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#d62828">2 · VBus · RED wire</text>
+<path d="M630 190 L790 190" fill="none" stroke="#d62828" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="250" width="170" height="20" rx="10" fill="#fff" stroke="#1f5fb4" stroke-width="2"/>
+<text x="875.0" y="264" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1f5fb4">10 · RXD · BLUE wire</text>
+<path d="M630 260 L790 260" fill="none" stroke="#1f5fb4" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="320" width="170" height="20" rx="10" fill="#fff" stroke="#1e8449" stroke-width="2"/>
+<text x="875.0" y="334" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e8449">9 · TXD · GREEN wire</text>
+<path d="M630 330 L790 330" fill="none" stroke="#1e8449" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="390" width="170" height="20" rx="10" fill="#fff" stroke="#222222" stroke-width="2"/>
+<text x="875.0" y="404" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#222222">5 · GND · BLACK wire</text>
+<path d="M630 400 L790 400" fill="none" stroke="#222222" stroke-width="3.5" stroke-linejoin="round"/>
+<rect x="790" y="460" width="170" height="20" rx="10" fill="#fff" stroke="#222222" stroke-width="2"/>
+<text x="875.0" y="474" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#222222">1 · GND · BLACK wire</text>
+<path d="M630 470 L790 470" fill="none" stroke="#222222" stroke-width="3.5" stroke-linejoin="round"/>
+<text x="170" y="150" text-anchor="middle" font-size="12" fill="#555">wires to torso (≈ 150 mm)</text>
+<text x="935" y="150" text-anchor="middle" font-size="12" fill="#555">wires to head (≈ 60 mm)</text>
+<text x="540" y="552" text-anchor="middle" font-size="11" fill="#555">direction set by the magnets (opposite polarities)</text>
+<text x="935" y="500" text-anchor="middle" font-size="11.5" fill="#b03a2e" font-weight="bold">Supplied cable: 2 reds (VBus no. 2, 3V3 no. 6)</text>
+<text x="935" y="518" text-anchor="middle" font-size="11.5" fill="#b03a2e" font-weight="bold">and 2 greens (D− no. 3, TXD no. 9): go by position</text>
+<text x="935" y="540" text-anchor="middle" font-size="11.5" fill="#555">DOCK: the head ties contact 4 to GND (no. 5)</text>
+<rect x="20" y="580" width="1060" height="100" rx="12" fill="#e9f6ec" stroke="#1e8449" stroke-width="1.5"/>
+<text x="38" y="606" font-size="15" font-weight="bold" fill="#145a32">Before connecting the head: multimeter checks, all power unplugged for steps 1 and 2</text>
+<text x="38" y="630" font-size="12.5" fill="#333">1. Continuity, contact by contact (1 to 5), torso to head  ·  2. No beep between +5 V (1) and GND (5), nor between neighbors, except 4-5 (joined in the head)</text>
+<text x="38" y="650" font-size="12.5" fill="#333">3. Torso powered alone, head board unplugged: about 5 V between contacts 1 and 5  ·  4. Contact 1 is live as soon as the torso is powered: keep metal objects away</text>
+<text x="38" y="670" font-size="12.5" fill="#333">To flash the head over its own USB: keep it off the neck (its USB-serial shares GPIO43/44 with the neck). Once closed, it flashes through the neck.</text>
+</svg>
