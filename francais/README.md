@@ -137,6 +137,13 @@ de contrôle. Passez par l'outil fourni, `extras/devine_animal/vers_robot.py` (�
 à la main. `dis taille` et `dis+ taille` envoient au haut-parleur un son mono à 16 kHz en 16 bits signés ; le second
 continue une réponse. `annonce taille` demande le transfert d'une annonce.
 
+## Licence
+
+MoodiMOS (programmes, CAO, pièces à imprimer, schémas et documentation) est publié sous la licence Creative Commons
+Attribution – Pas d'utilisation commerciale – Partage dans les mêmes conditions 4.0 International
+([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)). Texte complet :
+[LICENSE](../LICENSE), à la racine du dépôt.
+
 ## Ce que ce dossier ne contient pas
 
 Ni fichier personnel de la maison, ni historique git. Les rendus de conception montrent l'apparence voulue ; les

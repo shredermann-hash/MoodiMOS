@@ -42,3 +42,13 @@ conversation safeguard from the author's rules; Codex helped review it. The file
 tests and are provided as is, without warranty. Check dimensions against your components and check the wiring before
 the first power-up. Keep small parts and magnets away from young children. AI conversation is optional and
 experimental: if a child uses it, enable the safeguard described in Step 15 and stay with them.
+
+## Licence / License
+
+MoodiMOS, par / by shredermann-hash. Programmes, CAO, pièces à imprimer, schémas et documentation sous licence
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr) : vous pouvez fabriquer, modifier et
+partager, en citant MoodiMOS, sans usage commercial, et sous la même licence. Texte complet : [LICENSE](LICENSE).
+
+Firmware, CAD, printable parts, diagrams and documentation are licensed under
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/): you may build, modify and share them, with
+attribution, for non-commercial purposes, under the same licence. Full text: [LICENSE](LICENSE).

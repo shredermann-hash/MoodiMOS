@@ -138,7 +138,9 @@ complete transfer procedure and expected firmware responses.
 
 ## Publication files
 
-The public download link and code/CAD licence still need to be selected before publication.
+MoodiMOS (code, CAD, printable parts, diagrams and documentation) is released under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International licence (CC BY-NC-SA 4.0):
+https://creativecommons.org/licenses/by-nc-sa/4.0/
 This package excludes private household files and the Git history. Design renderings illustrate
 the intended appearance; the assembled robot photographs and build notes describe what was
 actually tested. Do not treat an image rendering as a fit check or an electronics test.
